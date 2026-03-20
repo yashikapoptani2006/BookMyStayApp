@@ -1,42 +1,24 @@
-import java.util.*;
-
-class Booking {
-    int roomNumber;
-    String customerName;
-
-    Booking(int roomNumber, String customerName) {
-        this.roomNumber = roomNumber;
-        this.customerName = customerName;
-    }
-}
-
+/**
+ * Use Case 1: Application Entry & Welcome Message
+ *
+ * Description:
+ * This class represents the entry point of the Hotel Booking Management System.
+ *
+ * @author Yashika
+ * @version 1.0
+ */
 public class BookMyStayApp {
 
-    static Set<Integer> bookedRooms = new HashSet<>();
-    static List<Booking> bookings = new ArrayList<>();
-
-    public static void bookRoom(int roomNumber, String name) {
-        if (bookedRooms.contains(roomNumber)) {
-            System.out.println("Room already booked!");
-        } else {
-            bookedRooms.add(roomNumber);
-            bookings.add(new Booking(roomNumber, name));
-            System.out.println("Room " + roomNumber + " booked for " + name);
-        }
-    }
-
-    public static void showBookings() {
-        for (Booking b : bookings) {
-            System.out.println("Room: " + b.roomNumber + ", Name: " + b.customerName);
-        }
-    }
-
+    /**
+     * Application entry point
+     * @param args command-line arguments
+     */
     public static void main(String[] args) {
-        bookRoom(101, "Yashika");
-        bookRoom(102, "Rahul");
-        bookRoom(101, "Ankit"); // duplicate booking test
 
-        System.out.println("\nAll Bookings:");
-        showBookings();
+        System.out.println("Welcome to the Hotel Booking Management System");
+        System.out.println("Application: BookMyStayApp");
+        System.out.println("Version: 1.0");
+        System.out.println("System initialized successfully.");
+
     }
 }
